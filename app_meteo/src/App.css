@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;800&display=swap');
+
+body {
+font-family: 'Rubik', sans-serif;
+min-height: 100vh ;
+background: rgb(19,3,255);
+background: linear-gradient(199deg, rgba(19,3,255,1) 0%, rgba(0,238,231,1) 80%);
+background-size: contain;
+}
