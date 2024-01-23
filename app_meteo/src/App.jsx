@@ -4,11 +4,14 @@ import Header from './components/Header'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Result from './pages/Result'
+import { Provider } from 'react-redux'
+import store from './store/store'
 
 function App() {
 
   return (
     <>
+    <Provider store={store}>
     <BrowserRouter>
      <Header />
       <Routes>
@@ -18,6 +21,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
     </>
   )
 }

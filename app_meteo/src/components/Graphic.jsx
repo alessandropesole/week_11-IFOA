@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 
 
-const Graphic = ({day}) => {
+const Graphic = () => {
+    const nextDays = useSelector((state) => state.nextDays)
+    const day= nextDays.nextDays
     const data = [
         {name:day.list[0].dt_txt.slice(0,10) , temperature: day.list[0].main.temp }, 
         {name:day.list[7].dt_txt.slice(0,10)  , temperature: day.list[7].main.temp  }, 
