@@ -20,7 +20,7 @@ const CardsNextDays = ({nextDay, trasformaData }) => {
             </Col>
             <Col>
             <div>
-            <h3 className=" ">{nextDay.main.temp.toFixed(0)}°</h3>
+            <h3>{nextDay.main.temp.toFixed(0)}°</h3>
             </div>
             <div >
             <h5 className="m-0">{trasformaData(nextDay.dt_txt)}</h5> 
