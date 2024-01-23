@@ -1,18 +1,22 @@
 import { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import Job from "./Job";
+import { useDispatch, useSelector } from "react-redux";
+import { setQuery } from "../actions/setQuery";
+import { setJobs } from "../actions/setJobs";
 
 const MainSearch = () => {
-  const [query, setQuery] = useState("");
-  const [jobs, setJobs] = useState([]);
-
+  const query = useSelector((state) => state.query.query)
+  const jobs = useSelector((state) => state.jobs.jobs)
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?search=";
 
   const handleChange = e => {
-    setQuery(e.target.value);
+    dispatch(setQuery(e.target.value));
   };
 
   const handleSubmit = async e => {
@@ -22,7 +26,7 @@ const MainSearch = () => {
       const response = await fetch(baseEndpoint + query + "&limit=20");
       if (response.ok) {
         const { data } = await response.json();
-        setJobs(data);
+        dispatch(setJobs(data));
       } else {
         alert("Error fetching results");
       }
@@ -34,11 +38,9 @@ const MainSearch = () => {
   return (
     <Container>
       <Row>
-        <Col xs={10} className="d-flex flex-wrap align-items-center mx-auto my-3">
-          <h1 className="display-1 me-auto">Remote Jobs Search</h1>
-          <Button variant="outline-primary" onClick={() => navigate("/favourites")}>
-            go to Favourites
-          </Button>
+        <Col xs={10} className="mx-auto my-3">
+          <h1 className="display-1">Remote Jobs Search</h1>
+          <Button variant="outline-primary" onClick={() => navigate("/favorites")}>Vai ai preferiti</Button>
         </Col>
         <Col xs={10} className="mx-auto">
           <Form onSubmit={handleSubmit}>
