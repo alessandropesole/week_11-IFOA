@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Job from "./Job";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setJobs } from "../actions/setJobs";
+import { setJobs, setJobsSearch } from "../actions/setJobs";
 
 const CompanySearchResults = () => {
-  const jobs = useSelector((state) => state.jobs.jobs);
+  const jobSearched = useSelector((state) => state.jobs.jobsSearched);
   const dispatch = useDispatch()
   const params = useParams();
 
@@ -14,7 +14,6 @@ const CompanySearchResults = () => {
 
   useEffect(() => {
     getJobs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getJobs = async () => {
@@ -22,8 +21,8 @@ const CompanySearchResults = () => {
       const response = await fetch(baseEndpoint + params.company);
       if (response.ok) {
         const { data } = await response.json();
-        dispatch(setJobs(data));
-        console.log(jobs);
+        dispatch(setJobsSearch(data));
+        console.log(jobSearched);
       } else {
         alert("Error fetching results");
       }
@@ -33,11 +32,11 @@ const CompanySearchResults = () => {
   };
   
   return (
-    <Container>
+    <Container style={{marginTop:'6vh'}}>
       <Row>
         <Col className="my-3">
           <h1 className="display-4">Job posting for: {params.company}</h1>
-          {jobs.map(jobData => (
+          {jobSearched.map(jobData => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>

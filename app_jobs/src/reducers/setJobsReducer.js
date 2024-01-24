@@ -1,7 +1,8 @@
-import { SET_JOBS } from "../actions/setJobs"
+import { SET_JOBS, SET_JOBS_SEARCH } from "../actions/setJobs"
 
 const initialState = {
-    jobs: []
+    jobs: [],
+    jobsSearched : []
 }
 
 
@@ -10,8 +11,13 @@ const setJobsReducer = (state = initialState, action) => {
         case SET_JOBS:
             return {
                 ...state,
-                jobs: action.payload
+                jobs: action.payload,
             }
+        case SET_JOBS_SEARCH: 
+            return {
+                ...state,
+                jobsSearched: action.payload,
+            }    
         
         default:
             return state

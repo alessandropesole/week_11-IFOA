@@ -10,20 +10,22 @@ const Job = ({ data }) => {
 
   return (
       <Row
-        className="mx-0 mt-3 p-3"
-        style={{ border: '1px solid #00000033', borderRadius: 4 }}
+        className="mx-0 mt-3 p-3 d-flex align-items-center"
+        style={{ border: '2px solid white', borderRadius: 4, backgroundColor: 'rgb(255, 255, 255, 0.200)'  }}
       >
-        <Col xs={3}>
+        <Col xs={4}>
           <Button 
-            variant="outline-success"
+            variant="success"
             onClick={() => dispatch(addFavorite(data.title))}
           >
-            Aggiungi preferito
+            Add to favorite
             </Button>
-          <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+            </Col>
+            <Col xs={4}>
+          <Link to={`/${data.company_name}`} className='text-white' style={{cursor:'pointer'}}>{data.company_name}</Link>
         </Col>
-        <Col xs={9}>
-          <a href={data.url} target="_blank" rel="noreferrer">
+        <Col xs={4}>
+          <a href={data.url} target="_blank" rel="noreferrer" className='text-white' style={{cursor:'pointer'}}>
             {data.title}
           </a>
         </Col>

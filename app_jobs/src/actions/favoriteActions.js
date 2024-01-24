@@ -1,18 +1,16 @@
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
 
-
-
-export const addFavorite = (title) => {
+export const addFavorite = (item) => {
     return {
         type: ADD_FAVORITE,
-        payload: title
+        payload: item
     }
 }
 
-export const removeFavorite = (title) => {
+export const removeFavorite = (item) => {
     return {
         type: REMOVE_FAVORITE,
-        payload: title
+        payload: item
     }
 }

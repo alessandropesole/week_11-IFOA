@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import favoritesReducer from "./favoritesReducers";
+import favoritesReducer from "./favoritesReducer";
 import setJobsReducer from "./setJobsReducer";
 import setQueryReducer from "./setQueryReducer";
 
@@ -8,8 +8,6 @@ import setQueryReducer from "./setQueryReducer";
 const rootReducer = combineReducers({
     favorites: favoritesReducer,
     jobs:setJobsReducer,
-    query:setQueryReducer
-  
-
+    query:setQueryReducer,
 })
 export default rootReducer

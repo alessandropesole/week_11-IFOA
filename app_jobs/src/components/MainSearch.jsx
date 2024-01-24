@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -27,6 +26,7 @@ const MainSearch = () => {
       if (response.ok) {
         const { data } = await response.json();
         dispatch(setJobs(data));
+        console.log(jobs);
       } else {
         alert("Error fetching results");
       }
@@ -36,10 +36,10 @@ const MainSearch = () => {
   };
 
   return (
-    <Container>
+    <Container style={{marginTop:'6vh'}}>
       <Row>
         <Col xs={10} className="mx-auto my-3">
-          <h1 className="display-1">Remote Jobs Search</h1>
+          <h1 className="display-2 text-center"><b>REMOTE JOBS SEARCH</b></h1>
           <Button variant="outline-primary" onClick={() => navigate("/favorites")}>Vai ai preferiti</Button>
         </Col>
         <Col xs={10} className="mx-auto">

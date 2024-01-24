@@ -6,11 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Favorites from "./components/Favorites";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import MyNavbar from "./components/MyNavbar";
 
 function App() {
   return (
     <Provider store={store}>
     <BrowserRouter>
+    <MyNavbar />
       <Routes>
         <Route path="/" element={<MainSearch />} />
         <Route path="/:company" element={<CompanySearchResults />} />

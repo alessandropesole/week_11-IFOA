@@ -12,26 +12,21 @@ const Favorites = () => {
     const navigate = useNavigate();
 
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <h1>Preferiti</h1>
-                    <Button variant="outline-primary" onClick={() => navigate("/")} >Ritorna alla Home</Button>
-                </Col>
-                <Col>
-                    <ListGroup>
+        <Container style={{marginTop:'10vh'}}>
+               <h1 className="text-center mt-5">ANNUNCI PREFERITI</h1>
+            <Row className="mt-5" >
+                
                         {favorites.length > 0 ? (
                             favorites.map((fav, index) => (
-                            <ListGroup.Item key={index}>
-                                <Button variant="outline-danger" onClick={() => dispatch({ type: REMOVE_FAVORITE, payload: fav })}>Elimina</Button>
-                                {fav}
-                            </ListGroup.Item>
+                            <Col xs={12} className="p-3 my-3" key={index} style={{ border: '2px solid white', borderRadius: 4, backgroundColor: 'rgb(255, 255, 255, 0.200)' }}>
+                                <Button variant="danger" onClick={() => dispatch({ type: REMOVE_FAVORITE, payload: fav })}>Delete</Button>
+                               <span className="ms-3"> {fav} </span>
+                            </Col>
                         ))
                         ) : (
-                            <ListGroup.Item>Non ci sono preferiti</ListGroup.Item>
+                            <Col xs={12} className="d-flex justify-content-center"><h2>Non hai ancora annunci preferiti</h2></Col>
                         )}
-                    </ListGroup>
-                </Col>
+                 
             </Row>
         </Container>
     )

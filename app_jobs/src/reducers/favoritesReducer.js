@@ -5,7 +5,7 @@ const initialState = {
 }
 
 
-const favoritesReducers = (state = initialState, action) => {
+const favoritesReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_FAVORITE:
             return {
@@ -13,9 +13,11 @@ const favoritesReducers = (state = initialState, action) => {
                 list: [...state.list, action.payload]
             }
         case REMOVE_FAVORITE:
-            return {
-                ...state,
-                list: state.list.filter((fav) => fav !== action.payload)
+                const updatedList = [...state.list];
+                updatedList.splice(action.payload, 1); 
+                return {
+                    ...state,
+                    list: updatedList
             }
         default:
             return state
@@ -23,4 +25,4 @@ const favoritesReducers = (state = initialState, action) => {
 }
 
 
-export default favoritesReducers;
+export default favoritesReducer;
