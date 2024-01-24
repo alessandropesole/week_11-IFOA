@@ -67,7 +67,8 @@ const CardCity = () => {
     return (
         <>
         <div id="div-card">
-        <Container className="d-flex flex-column align-items-center"  >
+          <div id="div-head">
+        <Container className="d-flex flex-column mt-5 ms-3 align-items-center" >
  <Row className="mb-3">
             <Col>
             <h2>Forecast for today:</h2>
@@ -87,38 +88,37 @@ const CardCity = () => {
         </Row>
         
         <Row>
-        <Col className="d-flex align-items-center colonna">
-        
-            <h5>Min: {cityData.cityData.main.temp_min.toFixed(0)}° / Max: {cityData.cityData.main.temp_max.toFixed(0)}°</h5>  
+        <Col className="d-flex flex-column align-items-center colonna">
+            <h5>Min: {cityData.cityData.main.temp_min.toFixed(0)}° / Max: {cityData.cityData.main.temp_max.toFixed(0)}° </h5>  
             <h5>Feels like: {cityData.cityData.main.feels_like.toFixed(0)}°</h5>
-            <img style={{width:'35px', marginBottom:'15px'}} src="./src/assets/icons/termometer.png" /> 
         </Col>
         </Row>
         <Row>
             <Col className="d-flex align-items-center colonna">
             <h5>Umidity: {cityData.cityData.main.humidity.toFixed(0)}%</h5>   
-            <img style={{width:'40px', marginBottom:'15px'}} src="./src/assets/icons/drop.png" /> 
+           
             </Col>
         </Row>
         <Row>
-        <Col className="d-flex colonna align-items-center">
-            <h5>Pressure: {cityData.cityData.main.pressure} mbar / Wind: {cityData.cityData.wind.speed} Knots</h5>
-            
-            <img style={{width:'40px', marginBottom:'15px'}}src="./src/assets/icons/wind.png"/>
-           
+        <Col className="d-flex flex-column colonna align-items-center">
+            <h5>Pressure: {cityData.cityData.main.pressure} mbar </h5>
+            <h5>Wind: {cityData.cityData.wind.speed} Km/h</h5>
         </Col>
         </Row>
-    </Container>        
-    <Container className="d-flex flex-column align-items-center mt-5">
+    </Container>  
+    <div id="container-grafico">      
+    <Container  className="d-flex flex-column align-items-center mt-5">
         <h3 className="h3">Temperatures over the next 3 days: </h3>
         <Graphic />
     </Container>
-    <Container className="d-flex flex-column align-items-center" style={{marginTop:'10vh'}}>
-    <h3  className="h3">Forecast for the next few days: </h3>
+    </div>
+    </div>
+    <Row className="align-items-center px-3 " style={{marginTop:'10vh'}}>
+    <h3 className="h3" style={{marginLeft:'4.5vw'}}>Forecast for the next hours: </h3>
     {nextDays.nextDays.list.map((nextday)=> (
         <CardsNextDays nextDay={nextday} key={nextday.dt_txt} />
     ))}
-    </Container>
+    </Row>
     
     </div> 
     

@@ -15,13 +15,13 @@ const Graphic = () => {
 
     return(
       <>
-    <ResponsiveContainer id="grafico" width={600} height={300}>
+    <ResponsiveContainer id="grafico" width={750} height={350}>
     <LineChart   data={data} margin={{ top: 5, right: 50, bottom: 5, left: 0 }}>
     <Line type="monotone" dataKey="temperature" stroke="rgb(0, 8, 255)" />
     <CartesianGrid stroke="rgba(74, 0, 134, 0.85)" strokeDasharray="3 3" />
-    <XAxis  stroke="rgb(0, 0,0)" dataKey="name" />
-    <YAxis stroke="rgb(0, 0,0)" dataKey="temperature" />
-    <Tooltip />
+    <XAxis  stroke="rgb(0, 0,0)" dataKey="name" style={{fontSize:'1.1rem'}} />
+    <YAxis stroke="rgb(0, 0,0)" dataKey="temperature" style={{fontSize:'1.1rem'}}  />
+    
   </LineChart>
   </ResponsiveContainer>
   </>

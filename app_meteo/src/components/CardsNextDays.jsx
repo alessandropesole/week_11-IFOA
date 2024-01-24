@@ -1,5 +1,5 @@
-import {Col,  Row } from "react-bootstrap"
-
+import {Col } from "react-bootstrap"
+import '../assets/css/CardCity.css';
 
 const CardsNextDays = ({nextDay, trasformaData }) => {
 
@@ -14,20 +14,20 @@ const CardsNextDays = ({nextDay, trasformaData }) => {
 
     return ( 
         <>
-            <Row className="d-flex align-items-center mb-3">
-            <Col>
-            <img width='140px' className="ms-0" src={`./src/assets/icons/${nextDay.weather[0].icon}.png`} />
-            </Col>
-            <Col>
+            <Col xs={12} md={6}  xl={4} xxl={3} id='col-nextdays' className="d-flex justify-content-center align-items-center px-2">
             <div>
-            <h3>{nextDay.main.temp.toFixed(0)}°</h3>
+            <img width='140px' className="ms-0" src={`./src/assets/icons/${nextDay.weather[0].icon}.png`} />
+            </div>
+            <div>
+            <div>
+            <h5 className="m-0">{trasformaData(nextDay.dt_txt)}</h5> 
+            <h4 className="m-0">{nextDay.dt_txt.slice(11, 16)}</h4> 
             </div>
             <div >
-            <h5 className="m-0">{trasformaData(nextDay.dt_txt)}</h5> 
-            <h5 className="m-0">{nextDay.dt_txt.slice(11, 16)}</h5> 
+            <h3>{nextDay.main.temp.toFixed(0)}°</h3>
+            </div>
             </div>
             </Col>
-            </Row>
       
             </>
     )
