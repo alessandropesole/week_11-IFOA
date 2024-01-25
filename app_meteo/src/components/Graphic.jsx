@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import React, { PureComponent } from 'react';
+import { AreaChart, Area, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import '../assets/css/CardCity.css';
 
 
@@ -16,13 +17,13 @@ const Graphic = () => {
   return (
     <>
       <ResponsiveContainer id="grafico" width={750} height={350}>
-        <LineChart data={data} margin={{ top: 5, right: 50, bottom: 5, left: 0 }}>
-          <Line type="monotone" dataKey="temperature" stroke="rgb(0, 8, 255)" />
+        <AreaChart data={data} margin={{ top: 5, right: 50, bottom: 5, left: 0 }}>
+          <Area type="monotone" dataKey="temperature" stroke="rgb(0, 8, 255)" />
           <CartesianGrid stroke="rgba(74, 0, 134, 0.85)" strokeDasharray="3 3" />
           <XAxis stroke="rgb(0, 0,0)" dataKey="name" style={{ fontSize: '1.1rem' }} />
           <YAxis stroke="rgb(0, 0,0)" dataKey="temperature" style={{ fontSize: '1.1rem' }} />
-
-        </LineChart>
+         
+        </AreaChart>
       </ResponsiveContainer>
     </>
   )
