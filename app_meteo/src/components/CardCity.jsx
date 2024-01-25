@@ -72,7 +72,7 @@ const CardCity = () => {
     <>
       <div id="div-card">
         <div id="div-head">
-          <Container className="d-flex flex-column mt-5 ms-3 align-items-center" >
+          <Container className="d-flex flex-column mt-5  align-items-center" >
             <Row className="mb-3">
               <Col>
                 <h2>Forecast for today:</h2>
@@ -118,7 +118,7 @@ const CardCity = () => {
           </div>
         </div>
         <Row className="align-items-center px-3 " style={{ marginTop: '10vh' }}>
-          <h3 className="h3" style={{ marginLeft: '4.5vw' }}>Forecast for the next hours: </h3>
+          <h3 id="forecast-title" className="h3" >Forecast for the next hours: </h3>
           {nextDays.nextDays.list.map((nextday) => (
             <CardsNextDays nextDay={nextday} key={nextday.dt_txt} />
           ))}

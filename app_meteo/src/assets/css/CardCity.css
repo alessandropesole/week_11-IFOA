@@ -11,6 +11,10 @@
     margin-bottom: 3vh
 }
 
+#forecast-title{
+    margin-left: 4.5vw
+}
+
 @media only screen and (max-width: 700px){
     #container-grafico{
         display:none
@@ -31,7 +35,10 @@
 }
 
 @media only screen and (min-width: 449px) and (max-width: 699px) { 
-   
+    #forecast-title{
+        margin-left: 0;
+    }
+
     #grafico {
         max-width:75vw;    
     }

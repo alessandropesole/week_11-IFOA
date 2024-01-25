@@ -7,4 +7,4 @@ export const setCity = (data) => {
         payload: data
     }
 }
-//questa action servirà per valorizzare lo stato di city 
+//questa action servirà per valorizzare lo stato di city.

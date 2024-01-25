@@ -31,7 +31,7 @@ const Job = ({ data }) => {
   <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0z"/>
 </svg>
  :
- 'Add to favorite' }
+ 'Add to favorites' }
             </Button>
             </Col>
             <Col xs={4}>
