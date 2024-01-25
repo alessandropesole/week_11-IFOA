@@ -105,7 +105,7 @@ const CardCity = () => {
             </Row>
             <Row>
               <Col className="d-flex flex-column colonna align-items-center">
-                <h5>Pressure: {cityData.cityData.main.pressure} mbar </h5>
+                <h5>Pressure: {cityData.cityData.main.pressure} hPa </h5>
                 <h5>Wind: {cityData.cityData.wind.speed} Km/h</h5>
               </Col>
             </Row>
