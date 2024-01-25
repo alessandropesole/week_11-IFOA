@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 function MyNavbar() {
     const navigate = useNavigate()
-
+  // grazie all'hook di react-router-dom useNavigate() affido ai link della navbar il collegamento o alla pagina home ('/') o alla pagina preferiti (/favorites) 
   return (
     <Navbar expand="lg" className="bg-primary" style={{position:'fixed', top:'0', width:'100%'}} >
       <Container>

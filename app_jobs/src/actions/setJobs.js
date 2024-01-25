@@ -15,3 +15,5 @@ export const setJobsSearch = (jobSearched) => {
     }
 } 
 
+//queste azioni verranno utilizzate per ottenere come payload i dati delle fetch relative rispettivamente al lavoro cercato nell'input text dall'utente e 
+// quella relativa alle offerte di una specifica company/azienda

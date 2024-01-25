@@ -1,12 +1,12 @@
 import { SET_JOBS, SET_JOBS_SEARCH } from "../actions/setJobs"
 
-const initialState = {
+const initialState = { //il valore iniziale dello stato sarà array vuoto
     jobs: [],
     jobsSearched : []
 }
 
-
-const setJobsReducer = (state = initialState, action) => {
+//sia per l'azione relativa ai lavori cercati che a quella degli annunci offerti da una specifica azienda il reducer ritornerà come stato il nuovo payload della action 
+const setJobsReducer = (state = initialState, action) => { 
     switch (action.type) {
         case SET_JOBS:
             return {
@@ -19,7 +19,7 @@ const setJobsReducer = (state = initialState, action) => {
                 jobsSearched: action.payload,
             }    
         
-        default:
+        default: //default obbligatorio in uno switch case che in questo caso ritorna lo stato iniziale di jobs e jobsSearched
             return state
     }
 }

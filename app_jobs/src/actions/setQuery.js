@@ -6,3 +6,4 @@ export const setQuery = (data) => {
         payload: data
     }
 }
+//azione che avrà come payload il value dell'input text inserito dall'utente nella ricerca 
