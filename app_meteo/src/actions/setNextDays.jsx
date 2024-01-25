@@ -6,3 +6,4 @@ export const setNextDays = (data) => {
         payload: data
     }
 }
+//questa action verrà utilizzata per ottenere come payload i dati relativi alla seconda fetch riguardante le previsioni dei prossimi giorni

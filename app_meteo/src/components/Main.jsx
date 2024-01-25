@@ -3,19 +3,18 @@ import Container from 'react-bootstrap/esm/Container';
 import { useNavigate } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCityData } from '../actions/setCityData';
 import { setSearch } from '../actions/setSearch';
 
 const Main = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const search = useSelector((state) => state.search.search);
+  const navigate = useNavigate(); //assegno alla costante navigate l'hook di react-router-dom useNavigate() 
+  const dispatch = useDispatch(); //assegno alla costante dispatch l'hook di redux useDispatch() 
+  const search = useSelector((state) => state.search.search); //tramite l'hook di redux useSelector assegno alla costante search lo stato di search
   
 
-  const handleSearch = () => {
+  const handleSearch = () => { //questa funzione che viene triggerata al click del search, una volta compilato l'input text, indirizzerà l'utente sulla pagina dei risultati meteo per la città cercata
     navigate(`/searchresults?searchedCity=${search}`);
   };
-
+  //con dispatch (riga 29) assegno come nuovo stato di search il value dell'input text compilato dall'utente con la città da cercare 
   return (
     <>
       <Container id="home" className='d-flex align-items-center'>

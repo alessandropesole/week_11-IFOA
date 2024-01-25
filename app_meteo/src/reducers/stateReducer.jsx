@@ -1,4 +1,6 @@
 import { SET_NEXT_DAYS } from "../actions/setNextDays";
+/*purtroppo sia per quanto riguarda lo stato della const che verrà valorizzata con i dati di questa fetch che per l'altra, ho
+dovuto inizializzare lo stato con l'intero oggetto richiamato dalla fetch, altrimenti lo stato non veniva valorizzato correttamente*/
 
 const initialState = {
 
@@ -1466,6 +1468,7 @@ const initialState = {
 
 
 const stateReducer = (state = initialState, action) => {
+     //con lo switch case dichiaro che il reducer ritornerà come stato di nextDays il nuovo payload della action SET_NEXT_DAYS o di default lo stato iniziale.
     switch (action.type) {
         case SET_NEXT_DAYS:
            

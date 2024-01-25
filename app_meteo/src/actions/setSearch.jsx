@@ -6,3 +6,4 @@ export const setSearch = (data) => {
         payload : data
     }
 }
+//questa action servirà a delineare globalmente lo stato di search che verrà valorizzato dallo useDispatch richiamato dalla funzione onChange nel componente Main.jsx

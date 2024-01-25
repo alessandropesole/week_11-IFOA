@@ -8,7 +8,7 @@ import {useNavigate} from 'react-router-dom'
 function Header() {
     
     const navigate = useNavigate()
-
+  //con l'hook di react-router-dom, useNavigate, assegno al link Home della navbar il collegamento alla pagina Home.jsx (riga 21)
   return (
     <Navbar id="navbar" expand="lg">
       <Container>
